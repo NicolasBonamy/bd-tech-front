@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import Footer from "../../commons/Footer/Footer";
 import Header from "../../commons/Header/Header";
 
@@ -21,12 +22,14 @@ function Start() {
         name="pseudo"
         placeholder="pseudo"
         required
-        minlength="4"
+        minLength="4"
         onChange={handleChange}
       />
-      <button type="button" onClick={handleSubmit}>
-        Valider
-      </button>
+      <Link to="/bd">
+        <button type="button" onClick={handleSubmit}>
+          Valider
+        </button>
+      </Link>
       <Footer />
     </div>
   );
