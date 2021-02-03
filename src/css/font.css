@@ -1,0 +1,29 @@
+@font-face {
+    font-family: 'ComicNeue-Bold';
+    src: url('../fonts/ComicNeue-Bold.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'ComicNeue-BoldItalic';
+    src: url('../fonts/ComicNeue-BoldItalic.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'ComicNeue-Italic';
+    src: url('../fonts/ComicNeue-Italic.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'ComicNeue-Light';
+    src: url('../fonts/ComicNeue-Light.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'ComicNeue-LightItalic';
+    src: url('../fonts/ComicNeue-LightItalic.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'ComicNeue-Regular';
+    src: url('../fonts/ComicNeue-Regular.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'NanumBrushScript-Regular';
+    src: url('../fonts/NanumBrushScript-Regular.ttf') format('truetype');
+  }
+  

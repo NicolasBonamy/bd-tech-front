@@ -3,8 +3,8 @@ import style from "./Header.module.css";
 
 function Header() {
     return (
-        <div>
-            <h1>Ma BD-Tech</h1>
+        <div className={style.Header}>
+            <h1 className={style.MainTitle}>Ma BD-Tech</h1>
         </div>
     )
 }
