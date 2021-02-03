@@ -1,11 +1,18 @@
-import React from 'react';
-import Header from './components/commons/Header/Header';
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Detail from "./components/views/Detail/Detail";
+import Home from "./components/views/Home/Home";
+import Start from "./components/views/Start/Start";
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/" component={Start} />
+        <Route exact path="/bd" component={Home} />
+        <Route path="/bd/:title" component={Detail} />
+      </Switch>
+    </Router>
   );
 }
 

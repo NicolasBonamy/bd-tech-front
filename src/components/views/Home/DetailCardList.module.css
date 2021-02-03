@@ -1,0 +1,9 @@
+.DetailCardList {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.DetailCardList li {
+    list-style: none;
+}

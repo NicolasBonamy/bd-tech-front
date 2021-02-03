@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Footer() {
+function Detail() {
     return (
         <div>
-            <p>NB | WCS | 2021</p>
+            hello world
         </div>
     )
 }
 
-export default Footer
+export default Detail
