@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Footer() {
+function DetailCard() {
     return (
         <div>
-            <p>NB | WCS | 2021</p>
+            
         </div>
     )
 }
 
-export default Footer
+export default DetailCard
