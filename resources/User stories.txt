@@ -1,0 +1,4 @@
+En tant qu'utilisateur, je peux consulter tous les livres que j'ai enregistré
+En tant qu'utilisateur, je peux filtrer ma collection par genre, auteur, etc...
+En tant qu'utilisateur, je peux ajouter ou supprimer un album de mes favoris
+En tant qu'utilisateur, je peux supprimer un album de ma collection
