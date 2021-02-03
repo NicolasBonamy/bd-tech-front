@@ -1,0 +1,40 @@
+@import url('/src/css/font.css');
+
+:root {
+  --blue-theme: #558CD6;
+
+  --main-font-title: 'NanumBrushScript-Regular';
+  --main-font-text: 'ComicNeue-Regular';
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--main-font-text);
+}
+
+h1 {
+    font-family: var(--main-font-title);
+    font-size: 4rem;
+    text-align: center;
+}
+
+h2 {
+    font-family: var(--main-font-title);
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+h3 {
+    font-family: var(--main-font-title);
+    font-size: 1rem;
+    text-align: center;
+}
+
+p {
+    font-family: var(--main-font-text);
+}
+
+button {
+    font-family: var(--main-font-text);
+}

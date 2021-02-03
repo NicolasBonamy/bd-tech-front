@@ -1,0 +1,13 @@
+.Header {
+  max-width: 500px;
+  justify-content: center;
+  background-image: url("../../../assets/images/bulle.png");
+  background-size: 30rem;
+  background-repeat: no-repeat;
+}
+
+.MainTitle {
+  margin-top: 0;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
