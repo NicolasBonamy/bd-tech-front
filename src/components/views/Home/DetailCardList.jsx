@@ -5,7 +5,6 @@ import DetailCard from "./DetailCard";
 
 function DetailCardList() {
   const [books, setBooks] = useState([]);
-  
 
   useEffect(() => {
     const psId = localStorage.getItem("pseudoBDid")
@@ -17,15 +16,15 @@ function DetailCardList() {
         console.log(data);
         setBooks(data);
       });
-  },[books]);
-
+  },[]);
+  
   return (
     <div className={style.DetailCardList}>
       <ul className={style.CardList}>
-        {books.map((book, id) => {
+        {books.map((book, index) => {
           return (
-            <li key={id}>
-              <DetailCard {...book} id={id} />
+            <li key={index}>
+              <DetailCard {...book} />
             </li>
           );
         })}
