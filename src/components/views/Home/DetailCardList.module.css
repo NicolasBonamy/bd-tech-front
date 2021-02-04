@@ -1,9 +1,53 @@
 .DetailCardList {
-display: flex;
-flex-direction: column;
-align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.CardList {
+  padding-left: 0;
 }
 
 .DetailCardList li {
-    list-style: none;
+  list-style: none;
+}
+
+.InputISBNHidden {
+  display: none;
+  width: 15rem;
+}
+
+.ButtonISBNHidden {
+  display: none;
+}
+
+.DetailCardList button {
+  width: 22rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  background-color: var(--blue-theme);
+  color: #fff;
+  border: none;
+}
+.ButtonCover {
+  width: 6rem;
+}
+
+.InputCover {
+  width: 15rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+  .CardList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }

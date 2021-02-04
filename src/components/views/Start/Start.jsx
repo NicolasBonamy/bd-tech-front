@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import style from './Start.module.css';
 import Footer from "../../commons/Footer/Footer";
 import Header from "../../commons/Header/Header";
 
@@ -15,21 +16,23 @@ function Start() {
   return (
     <div>
       <Header />
-      <label htmlFor="pseudo">Veuillez entrer votre pseudo</label>
-      <input
-        type="text"
-        id="pseudo"
-        name="pseudo"
-        placeholder="pseudo"
-        required
-        minLength="4"
-        onChange={handleChange}
-      />
-      <Link to="/bd">
-        <button type="button" onClick={handleSubmit}>
-          Valider
-        </button>
-      </Link>
+      <div className={style.Start}>
+        <label htmlFor="pseudo">Veuillez entrer votre pseudo :</label>
+        <input
+          type="text"
+          id="pseudo"
+          name="pseudo"
+          placeholder="pseudo"
+          required
+          minLength="4"
+          onChange={handleChange}
+        />
+        <Link to="/bd">
+          <button type="button" onClick={handleSubmit}>
+            Valider
+          </button>
+        </Link>
+      </div>
       <Footer />
     </div>
   );

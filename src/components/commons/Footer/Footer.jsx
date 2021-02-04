@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
+import style from './Footer.module.css';
 
 function Footer() {
     return (
         <div>
-            <p>NB | WCS | 2021</p>
+            <p className={style.Footer}>NB | WCS | 2021</p>
         </div>
     )
 }
