@@ -7,7 +7,6 @@ function DetailCardList() {
   const [books, setBooks] = useState([]);
   const [hideInput, setHideInput] = useState(true);
   const [ISBN, setISBN] = useState("");
-  const [setISBNBook] = useState("");
 
   useEffect(() => {
     const psId = localStorage.getItem("pseudoBDid");
@@ -35,7 +34,6 @@ function DetailCardList() {
       .get(`https://www.googleapis.com/books/v1/volumes?q=isbn:${ISBN}`)
       .then((res) => res.data)
       .then((data) => {
-        setISBNBook(data);
         axios.post(`${REACT_APP_SERVER_ADDRESS}/users/${psId}/books`, {
           title: data.items[0].volumeInfo.title,
           published_date: data.items[0].volumeInfo.publishedDate,
