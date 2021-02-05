@@ -1,27 +1,20 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import style from "./Detail.module.css";
+import PropTypes from "prop-types";
 import Header from "../../commons/Header/Header";
-import Footer from "../../commons/Footer/Footer";
+import style from "./Detail.module.css";
 
 function Detail(props) {
   const [book, setBook] = useState([]);
   const id = props.match.params.id;
   useEffect(() => {
-    console.log("id=", id);
     const { REACT_APP_SERVER_ADDRESS } = process.env;
     axios
       .get(`${REACT_APP_SERVER_ADDRESS}/books/${id}`)
       .then((res) => res.data)
       .then((data) => {
-        console.log(
-          "adresse axios=",
-          `${REACT_APP_SERVER_ADDRESS}/books/${id}`
-        );
-        console.log("data=", data);
         setBook(data);
-        console.log("book=", book);
       });
   }, [id]);
 
@@ -41,14 +34,19 @@ function Detail(props) {
               <p>
                 Date de publication : {book[0].published_date.split("T")[0]}
               </p>
-              <Link to="/bd" className={style.Link}>Retour à ma collection</Link>
+              <Link to="/bd" className={style.Link}>
+                Retour à ma collection
+              </Link>
             </div>
           </div>
-          <Footer />
         </div>
       )}
     </div>
   );
 }
+
+Detail.propTypes = {
+  Object: PropTypes.object,
+};
 
 export default Detail;

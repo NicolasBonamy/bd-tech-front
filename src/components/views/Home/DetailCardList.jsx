@@ -7,7 +7,7 @@ function DetailCardList() {
   const [books, setBooks] = useState([]);
   const [hideInput, setHideInput] = useState(true);
   const [ISBN, setISBN] = useState("");
-  const [ISBNBook, setISBNBook] = useState("");
+  const [setISBNBook] = useState("");
 
   useEffect(() => {
     const psId = localStorage.getItem("pseudoBDid");
@@ -36,16 +36,14 @@ function DetailCardList() {
       .then((res) => res.data)
       .then((data) => {
         setISBNBook(data);
-        console.log(data);
-        axios.post(`${REACT_APP_SERVER_ADDRESS}/users/${psId}/books`,
-        {
-          "title": data.items[0].volumeInfo.title,
-          "published_date": data.items[0].volumeInfo.publishedDate,
-          "cover_src": `https://couverture.geobib.fr/api/v1/${ISBN}/medium`,
-          "page_count": data.items[0].volumeInfo.pageCount,
-          "author_id": 4,
-          "user_id": psId
-      })
+        axios.post(`${REACT_APP_SERVER_ADDRESS}/users/${psId}/books`, {
+          title: data.items[0].volumeInfo.title,
+          published_date: data.items[0].volumeInfo.publishedDate,
+          cover_src: `https://couverture.geobib.fr/api/v1/${ISBN}/medium`,
+          page_count: data.items[0].volumeInfo.pageCount,
+          author_id: 4,
+          user_id: psId,
+        });
         setHideInput(true);
         setISBN("");
       });
@@ -84,6 +82,7 @@ function DetailCardList() {
       >
         Envoyer
       </button>
+      <div className={style.PseudoFooter}></div>
     </div>
   );
 }
