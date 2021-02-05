@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import style from './Start.module.css';
-import Footer from "../../commons/Footer/Footer";
+import style from "./Start.module.css";
 import Header from "../../commons/Header/Header";
 
 function Start() {
@@ -33,7 +32,6 @@ function Start() {
           </button>
         </Link>
       </div>
-      <Footer />
     </div>
   );
 }

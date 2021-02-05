@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 import style from "./DetailCard.module.css";
 
 function DetailCard(props) {
@@ -28,58 +29,29 @@ function DetailCard(props) {
         }
       )
       .then((res) => res.data)
-      .then((data) =>
-        console.log(
-          data,
-          `${REACT_APP_SERVER_ADDRESS}/users/${localStorage.getItem(
-            "pseudoBDid"
-          )}/books/${id}/cover`
-        )
-      );
-    setHideInput(true);
-    setCoverSrc("");
+      .then((data) => setHideInput(true), setCoverSrc(""));
   };
 
   const handleSubmitFavorite = () => {
-    axios
-      .put(
-        `${REACT_APP_SERVER_ADDRESS}/users/${localStorage.getItem(
-          "pseudoBDid"
-        )}/books/${id}`
-      )
-      .then((res) => res.data)
-      .then((data) =>
-        console.log(
-          data,
-          `${REACT_APP_SERVER_ADDRESS}/users/${localStorage.getItem(
-            "pseudoBDid"
-          )}/books/${id}`
-        )
-      );
+    axios.put(
+      `${REACT_APP_SERVER_ADDRESS}/users/${localStorage.getItem(
+        "pseudoBDid"
+      )}/books/${id}`
+    );
   };
 
   const handleSubmitDelete = () => {
-    axios
-      .delete(
-        `${REACT_APP_SERVER_ADDRESS}/users/${localStorage.getItem(
-          "pseudoBDid"
-        )}/books/${id}`
-      )
-      .then((res) => res.data)
-      .then((data) =>
-        console.log(
-          data,
-          `${REACT_APP_SERVER_ADDRESS}/users/${localStorage.getItem(
-            "pseudoBDid"
-          )}/books/${id}`
-        )
-      );
+    axios.delete(
+      `${REACT_APP_SERVER_ADDRESS}/users/${localStorage.getItem(
+        "pseudoBDid"
+      )}/books/${id}`
+    );
   };
 
   return (
     <div className={style.Card}>
-      <Link to={`/bd/${id}`} id={id} >
-        <img className={style.BookCover} src={cover_src} alt={title}/>
+      <Link to={`/bd/${id}`} id={id}>
+        <img className={style.BookCover} src={cover_src} alt={title} />
       </Link>
       <h2>{title}</h2>
       <button type="button" onClick={openInput}>
@@ -103,7 +75,9 @@ function DetailCard(props) {
         Envoyer
       </button>
       <button type="button" onClick={handleSubmitFavorite}>
-        {favorite? "Retirer de mes favoris":"Ajouter à mes favoris"}
+        {favorite
+          ? "❤️ - Retirer de mes favoris"
+          : "🤍 - Ajouter à mes favoris"}
       </button>
       <button type="button" onClick={handleSubmitDelete}>
         Supprimer de ma BDthèque
@@ -111,5 +85,16 @@ function DetailCard(props) {
     </div>
   );
 }
+
+DetailCard.propTypes = {
+  author_id: PropTypes.number.isRequired,
+  cover_src: PropTypes.string,
+  favorite: PropTypes.number.isRequired,
+  id: PropTypes.number.isRequired,
+  page_count: PropTypes.string,
+  published_date: PropTypes.string,
+  title: PropTypes.string.isRequired,
+  user_id: PropTypes.number.isRequired,
+};
 
 export default DetailCard;
